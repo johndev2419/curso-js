@@ -49,7 +49,7 @@ function exemploMercado(){
     alert(
         "Produto 1:" + produto1Nome +
         "\nPreço unitário: " + produto1Quantidade +
-        "\nValor: " + produto1Total
+        "\nValor: " + produto1Total +
         "\n\nProduto 2: " + produto2Nome +
         "\nPreço unitario: " + produto2Preco +
         "\nvalor: " + produto2Total +

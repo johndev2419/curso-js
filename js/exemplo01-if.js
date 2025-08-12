@@ -1,4 +1,4 @@
-function exemploCarro() {
+    function exemploCarro() {
     let placa = "ACB-1201"; // String
     let anoModelo = 2026; // int
     let anoFabricacao = 2025; // int

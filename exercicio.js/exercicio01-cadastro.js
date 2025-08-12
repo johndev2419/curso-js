@@ -88,8 +88,15 @@ function somaMultiplicacao() {
 function trocaValores(){
   let numero1 = parseInt(prompt("Digite um valor 1"));
   let numero2 = parseInt(prompt("Digite o valor 2"));
-  let troca = 
+  console.log("antes da troca:");
+  console.log("valor 1 =", numero1);
+  console.log("valor 2 =", numero2);
+  
+  let numero3 = numero1;
+  numero1 = numero2;
+  numero2 = numero3;
    
-
-   
+   console.log("depois da troca");
+   console.log("valor 1 =", numero1);
+   console.log("valor 2=", numero2);
 }

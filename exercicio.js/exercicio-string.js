@@ -5,7 +5,7 @@ function trocaPalavra() {
 
     let fraseAlterada = frase.replace(palavraTrocar, palavraNova);
 
-    console.log("palavra modificda");
+    console.log ("palavra modificda");
     console.log(fraseAlterada);
     alert("palavara modifica:" + " " + fraseAlterada)
 }
@@ -14,20 +14,20 @@ function removerOcorrencia() {
     let frase2 = prompt("Digite uma frase:");
     let palavraRemover = prompt("Qual palavra você quer remover completamente?");
     let fraseSemOcorrencias = frase2.replaceAll(palavraRemover, "");
-    console.log("Frase sem a palavra:", fraseSemOcorrencias);
+    alert("Frase sem a palavra:", fraseSemOcorrencias);
 
 }
 
 function separarNomes() {
     let nomeCompleto = prompt("Digite seu nome completo:");
     let partesNome = nomeCompleto.split(" ");
-    console.log("Primeiro nome:", partesNome);
-    console.log("Último nome:", partesNome(partesNome.length - 1));
+    alert("Primeiro nome:", partesNome);
+    alert("Último nome:", partesNome(partesNome.length - 1));
 }
 
 function parteFrase() {
     let frase3 = prompt("Digite uma frase:");
-    let parteExtraida = frase3.substring(2, 8);
+    let parteEliminada = frase3.substring(2, 8);
     console.log("Parte da frase:", parteExtraida);
 }
 

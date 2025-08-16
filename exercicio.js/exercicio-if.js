@@ -131,5 +131,104 @@ function bonus(){
     }
 }
 
+function senha(){
+    let login = prompt("Digite o nome usuario");
+    let senha = prompt("Digite a senha");
+     if (login === "admin" && senha === "12345"){
+        alert("login bem sucedido")
+     } else {
+        alert("login invalido");
+     }
+}
 
+function triangulo(){
+    let lado1 = parseFloat(prompt("digita o valor do primero lado do triangulo"));
+    let lado2 = parseFloat(prompt("digite o vaolor do segundo lado do triangulo"));
+    let lado3 = parseFloat(prompt("digite o valor do terceiro lado do triangulo"));
+      if(lado1 + lado2 > lado3 && lado2 + lado3 > lado1 && lado3 + lado1 > lado2){
+        alert("triangulo válidado");
+      } else{
+        alert("triangulo inválido");
+      }
+}
 
+function anoBissexto(){
+    let ano = parseFloat(prompt("digite o ano que deseja"));
+     if( ano % 4 === 0 ||  ano % 100 !== 0 && ano % 400 === 0){
+        alert("esse é um ano bissexto");
+     } else{
+        alert("não é um ano bissexto");
+     }
+}
+
+function quadrado(){
+    let ladoDireito = parseFloat(prompt("Digite o valor do lado direito do quadrado "));
+    let ladoBaixo = parseFloat (prompt("Digite o valor da parte de baixo do quadrado"));
+    let ladoesquerdo = parseFloat(prompt("Digite o valor do lado esquerdo do quadrado"));
+    let ladocima = parseFloat(prompt("Digite o valor da parte de cima do quadrado"));
+
+    if(ladoDireito === ladoesquerdo && ladoBaixo === ladocima && ladoBaixo === ladoDireito){
+        alert("isto é um quadrado");
+    } else{
+        alert("não é um quadrado");
+    }
+}
+
+function retangulo(){
+    let ladocima = parseFloat(prompt("Digite o valor da parte de cima do retangulo"));
+    let ladoBaixo = parseFloat(prompt("Digite o valor da parte de baixo do retangulo"));
+    let ladoesquerdo = parseFloat(prompt("Digite o valor do lado direito do retangulo"));
+    let ladoDireito = parseFloat(prompt("Digite o valor do lado direito do retangulo"));
+
+    if( ladoDireito === ladoesquerdo && ladoBaixo === ladocima){
+        alert("isto é um retangulo");
+    } else{
+        alert("isto não é retangulo");
+    }
+}
+
+function ordemCrescente(){
+    let n1 = parseInt(prompt("Digite um número"));
+    let n2 = parseInt(prompt("Digite um número"));
+    let n3 = parseInt(prompt("Digite um número"));
+
+    let comeco;
+    let meio;
+    let fim;
+
+    if(n1 >= n2 && n2 >= n3){
+        comeco = n3
+        meio = n2
+        fim = n1
+    }
+    if(n1 >= n3 && n3 >= n2 ){
+        comeco = n2
+        meio = n3 
+        fim = n1 
+    }
+    if(n2 >= n1 && n1 >= n3){
+        comeco = n3
+        meio = n1
+        fim = n2
+    }
+    if(n2 >= n3 && n3 >= n1){
+       comeco = n1
+       meio = n3
+       fim = n2
+    }
+    if(n3 >= n1 && n1 >= n2){
+        comeco = n2
+        meio = n1
+        fim = n3
+    }
+    if(n3 >= n2 && n2 >= n1){
+        comeco = n1
+        meio = n2
+        fim = n3
+    }
+
+    alert("apresento seus números em ordem crescente:" + " " + comeco +"," + " " + meio +"," + " " + "e" + " "+ fim);
+
+    }
+
+    

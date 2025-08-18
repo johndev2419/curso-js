@@ -1,4 +1,11 @@
-function exemploWhile() {
+Desconto progressivo + cupom
+Peça valor da compra e cupom ("FRETEGRATIS" ou "DESC10" ou vazio).
+
+Desconto: ≥ 500 → 15%; ≥ 300 → 10%; ≥ 150 → 5%; senão 0%.
+
+Cupom: "DESC10" aplica +10% (acumulativo), "FRETEGRATIS" zera frete (R$ 25 padrão).
+
+Se depois dos descontos o valor < 0, ajuste para 0 e avise.function exemploWhile() {
     // While é uma forma de repetir determinado trecho de código
     let indice = 0;
     while (indice < 5) {

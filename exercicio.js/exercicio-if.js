@@ -231,7 +231,7 @@ function ordemCrescente() {
 
 }
 
-function pedirNota() {
+/* function pedirNota() {
     let n1 = parseFloat(prompt("Digite a primeira nota do aluno"));
     let n2 = parseFloat(prompt("Digite a segunda nota do aluno"));
     let n3 = parseFloat(prompt("Digite a terceira nota do aluno"));
@@ -245,16 +245,107 @@ function pedirNota() {
         }
     }
 }
-
-   /*  if (media >= 6.8 && media < 7) {
-        if (trabalhoextra === "sim") {
-            media = media + 0.2;
-            if (media > 10) {
-                media = 10
-                alert("aluno aprovado")
-            }
-        }
+ */
+/*  if (media >= 6.8 && media < 7) {
+     if (trabalhoextra === "sim") {
+         media = media + 0.2;
+         if (media > 10) {
+             media = 10
+             alert("aluno aprovado")
+         }
      }
+  }
 
 
 }  */
+
+function calcularCompra() {
+    let valor = parseFloat(prompt("Digite o valor da compra"));
+    let cupom = prompt("Digite o cupom de descontos(fretegratis, desc10 ou deixar em branco caso não tenha cupom");
+    let frete = 25
+    let desconto;
+
+    if (valor >= 500) {
+        desconto = 0.15;
+    } else if (valor >= 300) {
+        desconto = 0.10;
+    } else if (valor >= 150) {
+        desconto = 0.05;
+    }
+    let valorcomDesconto = valor * (1 - desconto);
+
+    if (cupom === "desc10") {
+        valorcomDesconto * 0.90;
+    }
+    if (cupom === "fretegratis") {
+        frete = 0;
+    }
+
+    let valorFinal = valorcomDesconto + frete;
+
+
+    if (valorFinal < 0) {
+        alert("o valor final = 0")
+    }
+
+    alert("resumo da compra:" +
+        "\n\nValor bruto da compra:" + " " + valor +
+        "\nDesconto progressivo" + " " + desconto +
+        "\ncupom aplicado:" + " " + cupom +
+        "\nfrete:" + " " + frete +
+        "\nValor final:" + " " + valorFinal
+    );
+
+}
+
+function verificarMulta() {
+    const velocidade = parseFloat(prompt("digite a velocidade do automovel (km/h)"));
+    const limite = parseFloat(prompt("Digite o limite da via"));
+    if (velocidade <= limite) {
+        alert("sem infração");
+    }
+    const excessovelociadade = velocidade - limite;
+    const verificacao = (excessovelociadade / limite)* 100 ;
+
+    if (verificacao <= 20) {
+        alert("Infração leve");
+    } else if (verificacao <= 50) {
+        alert("Infração grave");
+    } else if (verificacao > 50) {
+        alert("Infração gravíssima");
+    }
+}
+
+function verificarMeiaentrada(){
+    let idade = parseInt(prompt("Digite sua idade"));
+    let estudante = prompt("você é estudante (sim/não)");
+    let meia;
+    let preçocheio = 30;
+
+    if( idade < 12 || idade > 60 && estudante === "sim"){
+        alert("você tem direito a meia entrada");
+    }else {
+        alert("você pagará o preço cheio" + " " + preçocheio);
+    }
+}
+
+function verificarquadrante(){
+    const x = parseFloat(prompt("Digite o valor de X"));
+    const y = parseFloat(prompt("Digite o valor de Y"));
+
+    if(x === 0 && y === 0){
+        alert("Origem");
+    } else if(x === 0 ){
+        alert("Eixo Y");
+    } else if(y === 0){
+        alert("Eixo X");
+    }else if ( x > 0 && y> 0){
+        alert("Primeiro quadrante");
+    } else if ( x < 0 && y > 0){
+        alert("segundo quadrante");
+    } else if ( x < 0 && y < 0 ){
+        alert("terceiro quadrante");
+    } else if ( x > 0 && y < 0){
+        alert("quarto quadrante");
+    }
+}

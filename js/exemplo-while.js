@@ -82,3 +82,6 @@ async function exemploRelogio() {
 
 
 }
+
+// prova 27/08/2025 prova de java 
+

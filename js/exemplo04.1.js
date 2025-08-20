@@ -282,6 +282,18 @@ function exemploComVariasValidacoes() {
         indice = indice + 1;
     }
 }
+function exemploSoma(){
+    let indice = 0;
+    let soma = 0;
+    while (indice < 3) {
+        let idade = parseInt(prompt("Digite a idade"));
+
+        soma = soma + idade;
+
+        indice = indice + 1;
+    }
+    alert("Soma: " + soma)
+}
 
 // while com validação de int
 // while com ou

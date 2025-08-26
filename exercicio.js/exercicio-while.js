@@ -252,3 +252,58 @@ function sistemaDeCompras() {
     alert(resumo);
 }
 
+function contarPontuação(){
+    let indice = 0;
+    let quantidadeInterrogacao = 0;
+    let quantidadeEsclamacao = 0;
+    let quantidadeFrases = 0;
+    
+    while(indice < 6){
+        let frase = prompt("digite uma frase com ou sem (!) ou (?) ");
+        if(frase.toLowerCase().trimEnd().endsWith("?")){
+           quantidadeInterrogacao = quantidadeInterrogacao + 1; 
+        } else if (frase.toLocaleLowerCase().trimEnd().endsWith("!")){
+            quantidadeEsclamacao = quantidadeEsclamacao + 1;
+        } else {
+           quantidadeFrases = quantidadeFrases + 1;
+        }
+        indice = indice + 1;
+    }
+    alert("")
+
+}
+
+function cadastroEmail(){
+    let email = " ";
+    let indice = 0;
+    let emailRegistrado = 0;
+
+    while(email.toLowerCase().trim() !== "fim"){
+        
+        email = prompt("Digite seu Email");
+        
+
+
+
+    }
+}
+
+
+
+
+
+/* function ateFim(){
+    let nome = " "; 
+    let indice = 0;
+    let nomeRegistrados = " ";
+   while(nome.toLowerCase().trim() !== "fim"){
+    nome = prompt("digite um nome")
+    if(nome.toLowerCase().trim() !== "fim"){
+        nomeRegistrados = nomeRegistrados + nome + "\n";
+        indice = indice + 1;
+    }
+}
+    alert("lista de nomes: " + nomeRegistrados + "quantidades de nomes" + indice);
+
+   
+} */

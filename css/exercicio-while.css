@@ -1,15 +1,23 @@
 h1{
-    color: aqua;
+    background-color: wheat;
+    color: black;
 }
 h2{
-    color: antiquewhite;
+    background-color: wheat;
+    color: black;
 }
 body{
     background-color: rgb(5, 101, 43);
 }
 h3{
-    color: rgb(116, 50, 3);
+    background-color: wheat;
+    color: black;
 }
 h4{
-    color: coral;
+    background-color: wheat;
+    color: black;
+}
+h5{
+    background-color: wheat;
+    color: black;
 }

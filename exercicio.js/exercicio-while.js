@@ -1,4 +1,4 @@
- function totalCompra() {
+function totalCompra() {
     let indice = 0;
     let soma = 0;
 
@@ -75,7 +75,7 @@ function menu() {
             validarSaudacao();
         } else if (escolha === 2) {
             parouImpar();
-        } else if(escolha !== 100){
+        } else if (escolha !== 100) {
             alert("opção invalida");
         }
     }
@@ -84,11 +84,11 @@ function menu() {
 }
 
 function validarSaudacao() {
-    const nome = prompt ("digite seu nome").trim();
-    
-    if( nome.length < 3 || nome.length > 150){
+    const nome = prompt("digite seu nome").trim();
+
+    if (nome.length < 3 || nome.length > 150) {
         alert("Nome inválido.");
-    } else{
+    } else {
         alert("Olá sou " + " " + nome);
     }
 
@@ -97,34 +97,34 @@ function validarSaudacao() {
 function parouImpar() {
     let numero = parseInt(prompt("Digite um número").trim());
 
-    if(numero % 2 ==0){
+    if (numero % 2 == 0) {
         alert(numero + " " + "é par");
-    }else if (numero % 2 === 1){
+    } else if (numero % 2 === 1) {
         alert(numero + " " + " é impar");
     }
 
 }
 
-function ateFim(){
-    let nome = " "; 
+function ateFim() {
+    let nome = " ";
     let indice = 0;
     let nomeRegistrados = " ";
-   while(nome.toLowerCase().trim() !== "fim"){
-    nome = prompt("digite um nome")
-    if(nome.toLowerCase().trim() !== "fim"){
-        nomeRegistrados = nomeRegistrados + nome + "\n";
-        indice = indice + 1;
+    while (nome.toLowerCase().trim() !== "fim") {
+        nome = prompt("digite um nome")
+        if (nome.toLowerCase().trim() !== "fim") {
+            nomeRegistrados = nomeRegistrados + nome + "\n";
+            indice = indice + 1;
+        }
     }
-}
     alert("lista de nomes: " + nomeRegistrados + "quantidades de nomes" + indice);
 
-   
+
 }
-function somaPreço(){
+function somaPreço() {
     let indice = 0;
     let soma = 0;
-    while(indice < 4){
-         let preco = parseFloat(prompt("digite o valor do produto").replace(",",".","R$", ""))
+    while (indice < 4) {
+        let preco = parseFloat(prompt("digite o valor do produto").replace(",", ".", "R$", ""))
 
         soma = soma + preco;
 
@@ -134,24 +134,24 @@ function somaPreço(){
     let media = soma / 4;
 
     alert("a soma dos valores é:" + " " + soma.toFixed(2) +
-    "\nÉ a média:" + " " + media.toFixed(2))
+        "\nÉ a média:" + " " + media.toFixed(2))
 }
 
-function contarPerguntas(){
-    let indice = 0; 
+function contarPerguntas() {
+    let indice = 0;
     let quantidadeInterrogacao = 0;
     let quantidadefrase = 0;
-    while(indice < 5){
+    while (indice < 5) {
         let frase = prompt("digite uma frase com perguntas ou não")
 
-        if (frase.toLowerCase().trimEnd().endsWith("?")){
-           quantidadeInterrogacao = quantidadeInterrogacao + 1 ;
-        } else{
-            quantidadefrase = quantidadefrase + 1 ;
+        if (frase.toLowerCase().trimEnd().endsWith("?")) {
+            quantidadeInterrogacao = quantidadeInterrogacao + 1;
+        } else {
+            quantidadefrase = quantidadefrase + 1;
         }
-           indice = indice + 1;
+        indice = indice + 1;
     }
-    alert("números de perguntas: " + quantidadeInterrogacao + 
+    alert("números de perguntas: " + quantidadeInterrogacao +
         "\nnúmeros de frases: " + quantidadefrase);
 }
 
@@ -162,12 +162,12 @@ function contarCupons() {
 
     while (indice < 5) {
         let cupom = prompt("Digite um cupom:").toLowerCase().trim();
-       
+
         if (cupom.startsWith("vip")) {
             quantidadeVip = quantidadeVip + 1;
         }
 
-      
+
         if (cupom.endsWith("off")) {
             quantidadeOff = quantidadeOff + 1;
         }
@@ -176,10 +176,10 @@ function contarCupons() {
     }
 
     alert("Número de cupons VIP: " + quantidadeVip +
-          "\nNúmero de cupons OFF: " + quantidadeOff);
+        "\nNúmero de cupons OFF: " + quantidadeOff);
 }
 
- function mostrarPrimeirosNomes() {
+function mostrarPrimeirosNomes() {
     let indice = 0;
     let listaDeNomes = "";
 
@@ -188,7 +188,7 @@ function contarCupons() {
         let partes = nomeCompleto.trim().split(" ");
         let primeiroNome = partes[0];
         let tresLetras = primeiroNome.substring(0, 3);
-        
+
         listaDeNomes = listaDeNomes + primeiroNome + " (" + tresLetras + ")\n";
         indice = indice + 1;
     }
@@ -214,18 +214,18 @@ function sistemaDeCompras() {
 
         let precoBR = prompt("Digite o preço (formato BR, ex: R$ 1.299,90):");
 
-       
+
         let precoLimpo = precoBR.replace("R$", "").replaceAll(" ", "").replaceAll(".", "").replace(",", ".");
 
         let preco = parseFloat(precoLimpo);
 
-       
+
         if (preco <= 0) {
             alert("Preço inválido. Tente novamente.");
             continue;
         }
 
-       
+
         total = total + preco;
         quantidade = quantidade + 1;
 
@@ -234,38 +234,38 @@ function sistemaDeCompras() {
             nomeMaisCaro = nomeProduto;
         }
 
-        
+
         relatorio += nomeProduto.padEnd(20, " ") + "R$ " + preco.toFixed(2) + "\n";
 
-       
+
         desejaCadastrar = prompt("Deseja cadastrar outro produto? (sim/não)")
-                            .toLowerCase().trim();
+            .toLowerCase().trim();
     }
 
-    
+
     let media = quantidade > 0 ? (total / quantidade).toFixed(2) : "0.00";
     let resumo = relatorio +
-                 "\nTotal: R$ " + total.toFixed(2) +
-                 "\nMédia: R$ " + media +
-                 "\nProduto mais caro: " + nomeMaisCaro + " (R$ " + maisCaro.toFixed(2) + ")";
+        "\nTotal: R$ " + total.toFixed(2) +
+        "\nMédia: R$ " + media +
+        "\nProduto mais caro: " + nomeMaisCaro + " (R$ " + maisCaro.toFixed(2) + ")";
 
     alert(resumo);
 }
 
-function contarPontuação(){
+function contarPontuação() {
     let indice = 0;
     let quantidadeInterrogacao = 0;
     let quantidadeEsclamacao = 0;
     let quantidadeFrases = 0;
-    
-    while(indice < 6){
+
+    while (indice < 6) {
         let frase = prompt("digite uma frase com ou sem (!) ou (?) ");
-        if(frase.toLowerCase().trimEnd().endsWith("?")){
-           quantidadeInterrogacao = quantidadeInterrogacao + 1; 
-        } else if (frase.toLocaleLowerCase().trimEnd().endsWith("!")){
+        if (frase.toLowerCase().trimEnd().endsWith("?")) {
+            quantidadeInterrogacao = quantidadeInterrogacao + 1;
+        } else if (frase.toLocaleLowerCase().trimEnd().endsWith("!")) {
             quantidadeEsclamacao = quantidadeEsclamacao + 1;
         } else {
-           quantidadeFrases = quantidadeFrases + 1;
+            quantidadeFrases = quantidadeFrases + 1;
         }
         indice = indice + 1;
     }
@@ -273,15 +273,24 @@ function contarPontuação(){
 
 }
 
-function cadastroEmail(){
+function cadastroEmail() {
     let email = " ";
     let indice = 0;
     let emailRegistrado = 0;
+    let google = 0;
+    let yahoo = 0;
+    let outlook = 0;
+    let outros = 0;
 
-    while(email.toLowerCase().trim() !== "fim"){
-        
+    while (email.toLowerCase().trim() !== "fim") {
+
         email = prompt("Digite seu Email");
-        
+
+        if (email.toLowerCase().trim() !== "fim") {
+            emailRegistrado = emailRegistrado + email
+        }
+
+
 
 
 
@@ -289,21 +298,135 @@ function cadastroEmail(){
 }
 
 
-
-
-
-/* function ateFim(){
-    let nome = " "; 
+function cadastrarTimeFutebol() {
     let indice = 0;
-    let nomeRegistrados = " ";
-   while(nome.toLowerCase().trim() !== "fim"){
-    nome = prompt("digite um nome")
-    if(nome.toLowerCase().trim() !== "fim"){
-        nomeRegistrados = nomeRegistrados + nome + "\n";
+
+    let menorPeso = 999999999999;
+
+    let menorPesoNome;
+
+    let maiorPeso = 0;
+
+    let maiorPesoNome;
+
+    let maiorAltura = 0;
+
+    let maiorAlturaNome;
+
+    let maiorNome = "";
+
+    let menorNome = Infinity.toString();
+
+    let generoF = 0;
+
+    let generoM = 0;
+
+    let menorCartaoAmarelo = 99999999999;
+
+    let menorCartaoAmareloNome = "";
+
+    let maiorCartaoAmarelo = 0;
+
+    let maiorCartaoAmareloNome = "";
+
+    let maiorCartaoVermelho = 0;
+
+    let maiorCartaoVermelhoNome = "";
+
+    let menorCartaoVermelho = Infinity;
+
+    let menorCartaoVermelhoNome = "";
+
+    let separarDados = "-".padEnd(40, "-");
+
+    while (indice < 22) {
+        let nome = prompt("Digite seu nome").trim();
+
+        if (nome.length > maiorNome.length) {
+            maiorNome = nome;
+        }
+
+        if (nome.length < menorNome.length) {
+            menorNome = nome;
+        }
+
+        let idade = parseInt(prompt("Digite sua idade").trim());
+
+        let peso = parseFloat(prompt("Digite o peso").trim().replace(".", ","));
+
+        if (peso < menorPeso) {
+            menorPeso = peso;
+            menorPesoNome = nome;
+        };
+
+        if (peso > maiorPeso) {
+            maiorPeso = peso;
+            maiorPesoNome = nome;
+        };
+
+        let genero = prompt("Digite o genêro (F/M)").trim();
+
+        if (genero.toLowerCase() === "f") {
+            generoF = generoF + 1;
+        } else if (genero.toLowerCase() === "m") {
+            generoM = generoM + 1;
+        }
+
+        let altura = parseFloat(prompt("Digite a altura").trim().replace(".", ","));
+
+        if (altura > maiorAltura) {
+            maiorAltura = altura;
+            maiorAlturaNome = nome;
+        }
+
+        let quantidadeGol = parseInt(prompt("Digite a quantidades de gols marcados").trim());
+
+        let quantidadeCartoesamarelo = parseInt(prompt("Digite as quantidades de cartões amarelos recibidos").trim());
+
+        if (quantidadeCartoesamarelo < menorCartaoAmarelo) {
+            menorCartaoAmarelo = quantidadeCartoesamarelo;
+            menorCartaoAmareloNome = nome;
+        }
+
+        if (quantidadeCartoesamarelo > maiorCartaoAmarelo) {
+            maiorCartaoAmarelo = quantidadeCartoesamarelo;
+            maiorCartaoAmareloNome = nome;
+        }
+
+        let quantidadeCartoesvermelhos = parseInt(prompt("Digite as quantidades de cartões vermelhos recibidos").trim());
+
+        if (quantidadeCartoesvermelhos > maiorCartaoVermelho) {
+            maiorCartaoVermelho = quantidadeCartoesvermelhos;
+            maiorCartaoVermelhoNome = nome;
+        }
+        if (quantidadeCartoesvermelhos < menorCartaoVermelho) {
+            menorCartaoVermelho = quantidadeCartoesvermelhos;
+            menorCartaoVermelhoNome = nome;
+        }
+
+
         indice = indice + 1;
     }
-}
-    alert("lista de nomes: " + nomeRegistrados + "quantidades de nomes" + indice);
 
-   
-} */
+    console.log("Jogador com o menor peso: " + menorPesoNome + "\n" + separarDados + 
+        "\nJogador com a maior altura: " + maiorAlturaNome + 
+        "\nAltura:" + maiorAltura + "\n" + separarDados + 
+        "\nJogador com o maior nome: " + maiorNome + "\n" + separarDados + 
+        "\nQuantidade de jogadores F:" + generoF +  
+        "\nQuantidade de jogadores M: " + generoM + "\n"+ separarDados + 
+        "\nJogador com menor quantidade de cartões amarelos: " + menorCartaoAmareloNome + 
+        "\nQuantidade: " + menorCartaoAmarelo + "\n" + separarDados +
+        "\nJogador com o menor nome: " + menorNome + "\n" + separarDados + 
+        "\nJogador com o maior peso: " + maiorPesoNome + "\n" + separarDados + 
+        "\nJogador com a maior quantidade de cartões vermelhos: " + maiorCartaoVermelhoNome + 
+        "\nQuantidade: " + maiorCartaoVermelho + "\n" + separarDados +
+        "\nJogador com maior quantidade de cartões amarelos: " + maiorCartaoAmareloNome + "\n" + separarDados +  
+        "\nJogador com a menor quantidade de cartões vermelhos: " + menorCartaoVermelhoNome)
+};
+
+
+
+
+
+
+
